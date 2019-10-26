@@ -1,5 +1,14 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS coffee_rideDB;
+CREATE DATABASE coffee_rideDB;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+USE coffee_rideDB;
+
+CREATE TABLE riders (
+  username VARCHAR(100) NOT NULL,
+  password PASSWORD NOT NULL,
+  chat TEXT NOT NULL,
+  favorite_place VARCHAR(200) NOT NULL,
+  current_date TIMESTAMP,
+  PRIMARY KEY (username)
+);
+
