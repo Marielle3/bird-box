@@ -3,12 +3,25 @@ CREATE DATABASE coffee_rideDB;
 
 USE coffee_rideDB;
 
-CREATE TABLE riders (
-  username VARCHAR(100) NOT NULL,
+CREATE TABLE registration (
+  userid INTEGER(11) NOT NULL,
+  email VARCHAR(255) NOT NULL, 
   password PASSWORD NOT NULL,
-  chat TEXT NOT NULL,
-  favorite_place VARCHAR(200) NOT NULL,
-  current_date TIMESTAMP,
-  PRIMARY KEY (username)
+  userName VARCHAR(255) NULL,
+  PRIMARY KEY (userid)
 );
+
+CREATE TABLE messaging (
+  messageid INTEGER(11) NOT NULL,
+  messageText VARCHAR(255) NULL,
+  current_date TIMESTAMP,
+  PRIMARY KEY(messageid)
+);
+
+CREATE TABLE rides (
+   rideid INTEGER(11) NOT NULL,
+   PRIMARY KEY(rideid)
+);
+
+
 
