@@ -1,28 +1,44 @@
 console.log("test");
 
-// var app = require('express')();
-// var server = require('http').Server(app);
-// var io = require('socket.io')(server);
-
-// server.listen(80);
-// // WARNING: app.listen(80) will NOT work here!
-
-// app.get('/', function (req, res) {
-//   res.sendFile(__dirname + '/index.html');
-// });
-
-// io.on('connection', function (socket) {
-//   socket.emit('news', { hello: 'world' });
-//   socket.on('my other event', function (data) {
-//     console.log(data);
-//   });
-// });
-
 require("dotenv").config();
 var express = require("express");
 const exphbs = require("express-handlebars");
+var path = require("path");
+var bodyParser = require("body-parser");
+
+var Pusher = require("pusher");
+
+var pusher = new Pusher({
+  appId: "889258",
+  key: "d2c5476b684157236731",
+  secret: "c6e4e0e3251fbdf2c271",
+  cluster: "us3",
+  encrypted: true
+});
 
 var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
+
+app.post("/comment", function(req, res) {
+  console.log(req.body);
+  var newComment = {
+    name: req.body.name,
+    email: req.body.email,
+    comment: req.body.comment
+  };
+  pusher.trigger("flash-comments", "new_comment", newComment);
+  res.json({ created: true });
+});
+
+// Error Handler for 404 Pages
+app.use(function(req, res, next) {
+  var error404 = new Error("Route Not Found");
+  error404.status = 404;
+  next(error404);
+});
 
 var db = require("./models");
 var PORT = process.env.PORT || 3000;
