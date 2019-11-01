@@ -8,6 +8,13 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/signUp", function(req, res) {
+    console.log("this is signup");
+    db.Registration.create(req.body).then(function(dbRegistration) {
+      console.log("registration", dbRegistration);
+      res.json(dbRegistration);
+    });
+  });
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
