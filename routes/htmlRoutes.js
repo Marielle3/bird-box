@@ -14,6 +14,10 @@ module.exports = function(app) {
   app.get("/registration", function(req, res) {
     res.render("registration");
   });
+  // get chat room page
+  app.get("/chat-room", function(req, res) {
+    res.render("chat");
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
