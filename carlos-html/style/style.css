@@ -1,6 +1,6 @@
 
 html {
-  background-image: url("images/backgroundlogin.jpg");
+  background-image: url("images/loginback.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -44,7 +44,13 @@ h2 {
   padding: 20px;
 }
 
+#login-form {
+  overflow: hidden;
+  position: center;
+}
+
 #formContent {
+  
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
