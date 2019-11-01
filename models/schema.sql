@@ -3,11 +3,11 @@ CREATE DATABASE coffee_rideDB;
 
 USE coffee_rideDB;
 
-CREATE TABLE registration (
+CREATE TABLE registrations (
   userid INTEGER(11) NOT NULL,
   email VARCHAR(255) NOT NULL, 
-  password BOOLEAN NOT NULL,
-  userName VARCHAR(255) NULL,
+  password VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NULL,
   PRIMARY KEY (userid)
 );
 
