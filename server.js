@@ -9,10 +9,10 @@ var bodyParser = require("body-parser");
 var Pusher = require("pusher");
 
 var pusher = new Pusher({
-  appId: "889258",
-  key: "d2c5476b684157236731",
-  secret: "c6e4e0e3251fbdf2c271",
-  cluster: "us3",
+  appId: process.env.appId,
+  key: process.env.key,
+  secret: process.env.secret,
+  cluster: process.env.cluster,
   encrypted: true
 });
 
