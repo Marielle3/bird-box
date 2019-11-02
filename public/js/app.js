@@ -13,8 +13,8 @@
     // Subscribing to the 'flash-comments' Channel
     channel = pusher.subscribe("flash-comments"),
     commentForm = document.getElementById("comment-form"),
-    commentsList = document.getElementById("comments-list"),
-    commentTemplate = document.getElementById("comment-template");
+    commentsList = document.getElementById("comments-list");
+  // commentTemplate = document.getElementById("comment-template");
 
   // Binding to Pusher Event on our 'flash-comments' Channel
   channel.bind("new_comment", newCommentReceived);
@@ -25,16 +25,28 @@
   // New Comment Receive Event Handler
   // We will take the Comment Template, replace placeholders & append to commentsList
   function newCommentReceived(data) {
-    var newCommentHtml = commentTemplate.innerHTML.replace(
-      "{{name}}",
-      data.name
-    );
-    newCommentHtml = newCommentHtml.replace("{{email}}", data.email);
-    newCommentHtml = newCommentHtml.replace("{{comment}}", data.comment);
-    var newCommentNode = document.createElement("div");
-    newCommentNode.classList.add("comment");
-    newCommentNode.innerHTML = newCommentHtml;
-    commentsList.appendChild(newCommentNode);
+    console.log(data);
+    commentNode = document.createElement("div");
+    commentNode.classList.add("comment");
+    commentNode.innerHTML = commentTemplate(data);
+    commentsList.appendChild(commentNode);
+  }
+
+  function commentTemplate({ name, email, comment }) {
+    return `
+    <div class="user-icon">
+        <img src="./styles/images/userLogo.jpg" />
+    </div>
+    <div class="comment-info">
+        <div class="row">
+            <div class="name"> ${name}</div>
+            <div class="email">${email}</div>
+        </div>
+        <div class="row">
+            <div class="text">${comment}</div>
+        </div>
+    </div>
+                        `;
   }
 
   function addNewComment(event) {
@@ -45,6 +57,9 @@
       comment: document.getElementById("new_comment_text").value
     };
 
+    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line prettier/prettier
+  
     var xhr = new XMLHttpRequest();
     xhr.open("POST", serverUrl + "comment", true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
