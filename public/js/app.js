@@ -6,8 +6,8 @@
   var serverUrl = "/",
     // eslint-disable-next-line no-unused-vars
     comments = [],
-    pusher = new Pusher("d2c5476b684157236731", {
-      cluster: "us3",
+    pusher = new Pusher(process.env.key, {
+      cluster: process.env.cluster,
       encrypted: true
     }),
     // Subscribing to the 'flash-comments' Channel
