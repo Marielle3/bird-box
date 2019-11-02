@@ -10,9 +10,9 @@ module.exports = function(app) {
 
   app.post("/api/signUp", function(req, res) {
     console.log("this is signup");
-    db.Registration.create(req.body).then(function(dbRegistration) {
-      console.log("registration", dbRegistration);
-      res.json(dbRegistration);
+    db.User.create(req.body).then(function(dbUser) {
+      console.log("registration", dbUser);
+      res.json(dbUser);
     });
   });
   // Create a new example
