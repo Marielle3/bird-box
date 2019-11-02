@@ -8,6 +8,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/signUp", function(req, res) {
+    db.User.findAll({}).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
   app.post("/api/signUp", function(req, res) {
     console.log("this is signup");
     db.User.create(req.body).then(function(dbUser) {
