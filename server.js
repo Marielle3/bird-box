@@ -33,13 +33,6 @@ app.post("/comment", function(req, res) {
   res.json({ created: true });
 });
 
-// Error Handler for 404 Pages
-app.use(function(req, res, next) {
-  var error404 = new Error("Route Not Found");
-  error404.status = 404;
-  next(error404);
-});
-
 var db = require("./models");
 var PORT = process.env.PORT || 3000;
 

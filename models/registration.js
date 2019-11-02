@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-  var Registration = sequelize.define("Registration", {
+  var User = sequelize.define("User", {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     username: DataTypes.STRING
   });
-  return Registration;
+  return User;
 };

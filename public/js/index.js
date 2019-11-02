@@ -3,6 +3,7 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+// let $registerEmail = $("#inputEmail");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -28,6 +29,16 @@ var API = {
       type: "DELETE"
     });
   }
+  // saveRegistration: function(registration) {
+  //   return $.ajax({
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     type: "POST",
+  //     url: "api/signUp",
+  //     data: JSON.stringify(registration)
+  //   });
+  // }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
