@@ -1,3 +1,7 @@
+// let $loginEmail = $("#userEmail");
+// let $loginPassword = $("userPassword");
+// let $submitBtn = $("submitUserBtn");
+
 // let API = {
 //   findUser: function() {
 //     return $.ajax({
@@ -11,7 +15,9 @@
 //   event.preventDefault();
 
 //   let login = {
-//     email:
+//     email: $loginEmail.val().trim(),
+//     password: $loginPassword.val().trim()
+//   };
 
-//   }
+//   if (login.email && login.password === )
 // }
