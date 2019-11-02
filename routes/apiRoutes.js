@@ -8,8 +8,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/signUp", function(req, res) {
-    db.User.findAll({}).then(function(dbUser) {
+  app.post("/api/login", function(req, res) {
+    const userCredentials = req.body;
+    console.log("request body", userCredentials);
+    db.User.findOne({
+      where: {
+        password: userCredentials.password,
+        email: userCredentials.email
+      }
+    }).then(function(dbUser) {
+      console.log("found User: ", dbUser);
       res.json(dbUser);
     });
   });

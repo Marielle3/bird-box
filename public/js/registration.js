@@ -31,6 +31,7 @@ let userCreateSubmit = function(event) {
   }
 
   API.saveRegistration(registration).then(function(res) {
+    window.location = "/login";
     console.log("response is: ", res);
   });
   $registerEmail.val("");
