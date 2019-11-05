@@ -32,6 +32,7 @@
     commentsList.appendChild(commentNode);
   }
 
+  // displays the live comment feed
   function commentTemplate({ name, email, comment }) {
     return `
     <div class="user-icon">
