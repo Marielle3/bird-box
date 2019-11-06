@@ -1,3 +1,14 @@
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -8,7 +19,6 @@ body {
   background-size: 1360px 768px;
   background-color: #27292b;
 }
-
 
 a {
   color: #a7a1a3;
@@ -27,9 +37,6 @@ h2 {
   color: #cccccc;
 }
 
-.inputPassword {
-  text-align: center;
-}
 
 
 /* STRUCTURE */
