@@ -26,7 +26,7 @@ let userLogInSubmit = function(event) {
   API.findUser(login)
     .then(function(user) {
       console.log("logged in user is", user);
-      window.localStorage.setItem("user", user.email);
+      window.localStorage.setItem("user", user.username);
       window.location = "/chat-room";
     })
     .catch(function() {
