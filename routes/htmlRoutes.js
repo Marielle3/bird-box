@@ -1,14 +1,9 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
+  // Load main page to be the registration page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.render("registration");
   });
 
   app.get("/registration", function(req, res) {
