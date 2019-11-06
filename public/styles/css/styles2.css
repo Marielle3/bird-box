@@ -19,6 +19,7 @@ header{
   color:#fff;
 }
 
+
 .flash-logo{
   height:60px;
   border-radius: 8px;
@@ -46,12 +47,19 @@ section{
   overflow: hidden;
 }
 
+
+#comment-edit{
+  height: 100px;
+  width: relative;
+}
+
 .post{
   padding-top:10px;
 }
 
 .pic-post {
-  height: 150px;
+  height: 250px;
+  width: relative;
   padding: 60px;
   margin-left: 10px;
 }
