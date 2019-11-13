@@ -33,5 +33,5 @@ The goal of this app is to target Bike Riders in Downtown Portland, Oregon that 
   - Pusher Channels provides realtime communication between servers, apps and devices. Channels is used for notifications, chat, gaming, web-page updates, IoT, and many other systems requiring realtime communication.
 
   [Git Hub Repository](https://github.com/Marielle3/project_2)
-  [Git Hub Repository](https://projectuofo2.herokuapp.com/)
+  [Heroku](https://projectuofo2.herokuapp.com/)
   Authors: Marielle, Karl, Carlo
